@@ -1,8 +1,8 @@
 @extends('layout/admin')
 @section('body')
-   <div class ="card-body"> 
+    <div class ="card-body"> 
     <table class="table">
-            <h1> Product</h1>
+            <h1> Category</h1>
             <a href =""class="btn btn-primary"> add </a>
   <thead>
     <tr>
