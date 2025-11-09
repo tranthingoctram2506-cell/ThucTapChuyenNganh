@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,10 +13,9 @@
   <link href="css/sb-admin.css" rel="stylesheet">
 
   <style>
-    /* Ví dụ: Tạo màu neon green sáng hơn */
     .btn-neon-success {
         color: #000;
-        background-color: #39ff14; /* Màu xanh lá neon */
+        background-color: #39ff14;
         border-color: #39ff14;
     }
     .text-neon-success {
