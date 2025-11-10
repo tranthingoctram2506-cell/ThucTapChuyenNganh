@@ -3,16 +3,12 @@
 <head>
     <meta charset="utf-8">
     <title>Trang Chủ | MovieReview </title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="review phim, đánh giá phim, phim hot, tin tức điện ảnh" name="keywords">
-    <meta content="Tổng hợp các bài review, đánh giá chi tiết về các bộ phim chiếu rạp và nổi bật nhất." name="description">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
@@ -78,7 +74,7 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <div class="navbar-nav ms-auto py-0">
-                            <a href="index.html" class="nav-item nav-link active text-white">Trang Chủ</a>
+                            <a href="{{ route('home') }}" class="nav-item nav-link active text-white">Trang Chủ</a>
                             <a href="review.html" class="nav-item nav-link text-white">Review Phim</a>
                             <a href="news.html" class="nav-item nav-link text-white">Tin Tức Điện Ảnh</a>
                             <a href="contact.html" class="nav-item nav-link me-2 text-white">Liên Hệ</a>
