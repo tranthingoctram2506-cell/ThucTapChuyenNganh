@@ -14,4 +14,8 @@ Route::get('/admin/quanlyphim', function () {
 Route::get('/admin/theloai', function () {
     return view('admin/quanlyphim/theloai');
 })->name('theloai');
+Route::get('/admin/phimchoduyet', function () {
+    return view('admin/quanlyreview/phimchoduyet');
+})->name('phimchoduyet');
+
 ?>

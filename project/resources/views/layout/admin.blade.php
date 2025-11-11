@@ -1,160 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <base href="{{ asset('public/')}}">
-  <title>SB Admin - Start Bootstrap Template</title>
-  <!-- Bootstrap core CSS-->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom fonts for this template-->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <!-- Page level plugin CSS-->
-  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-  <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JamJam Admin - Trang quản trị</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: "Poppins", sans-serif;
+        }
+        .navbar {
+            background-color: #212529;
+        }
+        .navbar-brand {
+            font-weight: 600;
+            color: #ffcc00 !important;
+        }
+        .sidebar {
+            min-height: 100vh;
+            background-color: #343a40;
+            padding-top: 1rem;
+        }
+        .sidebar a {
+            color: #fff;
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        footer {
+            background-color: #212529;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .content-area {
+            padding: 20px;
+        }
+    </style>
 </head>
+<body>
 
-<body class="fixed-nav sticky-footer bg-dark" id="page-top">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="{{ route('admin')}}">Movie Review Admin</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-        
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href=""> 
-            <i class="fa fa-fw fa-dashboard"></i>
-            <span class="nav-link-text">Dashboard Tổng Quan</span>
-          </a>
-        </li>
-        
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Quản Lý Phim">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMovies" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-film"></i>
-            <span class="nav-link-text">Quản Lý Phim</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseMovies">
-            <li>
-              <a href="{{ route('danhsachphim') }}">Danh Sách Phim</a>
-            </li>
-            <li>
-              <a href="{{ route('theloai')}}">Quản Lý Thể Loại</a>
-            </li>
-          </ul>
-        </li>
-
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Quản Lý Review">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseReviews" data-parent="#exampleAccordion">
-            <i class="fa-solid fa-pen-to-square"></i>
-            <span class="nav-link-text">Quản Lý Review</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseReviews">
-            <li>
-              <a href="">Bài Viết Chờ Duyệt</a>
-            </li>
-            <li>
-              <a href="">Bài Viết Đã Đăng</a>
-            </li>
-          </ul>
-        </li>
-
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Quản Lý Thành Viên">
-          <a class="nav-link" href="">
-            <i class="fa fa-fw fa-users"></i>
-            <span class="nav-link-text">Thành Viên</span>
-          </a>
-        </li>
-        
-         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Quản Lý Bình Luận">
-          <a class="nav-link" href="">
-            <i class="fa fa-fw fa-comments"></i>
-            <span class="nav-link-text">Bình Luận</span>
-          </a>
-        </li>
-
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Cài Đặt">
-          <a class="nav-link" href="">
-            <i class="fa fa-fw fa-cogs"></i>
-            <span class="nav-link-text">Cài Đặt</span>
-          </a>
-        </li>
-
-      </ul>
-      <ul class="navbar-nav sidenav-toggler">
-        <li class="nav-item">
-          <a class="nav-link text-center" id="sidenavToggler">
-            <i class="fa fa-fw fa-angle-left"></i>
-          </a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <form class="form-inline my-2 my-lg-0 mr-lg-2">
-            <div class="input-group">
-              <input class="form-control" type="text" placeholder="Tìm kiếm phim, review...">
-              <span class="input-group-btn">
-                <button class="btn btn-primary" type="button">
-                  <i class="fa fa-search"></i>
-                </button>
-              </span>
-            </div>
-          </form>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
-        </li>
-      </ul>
+<nav class="navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ route('admin') }}">
+            Trang quản trị
+        </a>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Tìm kiếm..." aria-label="Search">
+            <button class="btn btn-warning" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <a href="#" class="btn btn-outline-light ms-2"><i class="fa fa-sign-out"></i> Đăng xuất</a>
     </div>
-  </nav>
-  <div class="content-wrapper">
-    
-    @yield('body')
-    
-    <footer class="sticky-footer">
-      <div class="container">
-        <div class="text-center">
-          <small> Movie Review Admin 2025</small>
-        </div>
-      </div>
-    </footer>
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fa fa-angle-up"></i>
-    </a>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Sẵn sàng thoát?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Chọn "Đăng Xuất" nếu bạn muốn kết thúc phiên làm việc hiện tại.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Hủy</button>
-            <a class="btn btn-primary" href="">Đăng Xuất</a>
-          </div>
-        </div>
-      </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <aside class="col-md-2 sidebar">
+            <a href="{{ route('admin') }}"><i class="fa fa-dashboard me-2"></i> Tổng quan</a>
+            <a href="{{ route('danhsachphim') }}"><i class="fa fa-film me-2"></i> Quản lý phim</a>
+            <a href="{{ route('phimchoduyet') }}"><i class="fa fa-film me-2"></i> Phim chờ duyệt</a>
+            <a href="{{ route('theloai') }}"><i class="fa fa-tags me-2"></i> Thể loại</a>
+            <a href="#"><i class="fa fa-pen me-2"></i> Review</a>
+            <a href="#"><i class="fa fa-users me-2"></i> Người dùng</a>
+            <a href="#"><i class="fa fa-comments me-2"></i> Bình luận</a>
+            <a href="#"><i class="fa fa-cog me-2"></i> Cài đặt</a>
+        </aside>
+
+        <!-- Content -->
+        <main class="col-md-10 content-area">
+            @yield('body')
+        </main>
     </div>
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
-    <script src="js/sb-admin.min.js"></script>
-    <script src="js/sb-admin-datatables.min.js"></script>
-    <script src="js/sb-admin-charts.min.js"></script>
-  </div>
+</div>
+
+<footer>
+    ©Movie Review — Trang quản trị
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
-
 </html>
