@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Trang Chủ | MovieReview </title>
+    <title>Phim Hành Động | MovieReview </title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@
             <span class="sr-only">Loading...</span>
         </div>
     </div>
-    
+
     <div class="container-fluid px-5 py-4 d-none d-lg-block bg-black border-bottom border-secondary">
         <div class="row gx-0 align-items-center text-center">
             <div class="col-md-3 text-center text-lg-start">
@@ -58,7 +58,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="container-fluid nav-bar p-0">
         <div class="row gx-0 bg-success px-5 align-items-center">
             <div class="col-12">
@@ -73,15 +73,15 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <div class="navbar-nav ms-auto py-0">
-                            <a href="{{ route('home') }}" class="nav-item nav-link active text-white">Trang Chủ</a>
+                            <a href="{{ route('home') }}" class="nav-item nav-link text-white">Trang Chủ</a>
                             <div class="nav-item dropdown">
-                                <a href="review.html" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Thể loại</a>
+                                <a href="review.html" class="nav-link dropdown-toggle text-white active" data-bs-toggle="dropdown">Thể loại</a>
                                 <div class="dropdown-menu bg-success border-0 rounded-0 m-0">
                                     <div class="d-flex p-2">
                                         <div class="col-6">
                                             <h6 class="dropdown-header text-dark fw-bold">Thể loại phim</h6>
-                                            <a href="{{ route('hanhdong') }}"class="dropdown-item">Hành động</a>
-                                            <a href="{{ route('kinhdi') }}" class="dropdown-item">Kinh dị</a>
+                                            <a href="{{ route('hanhdong') }}" class="dropdown-item active">Hành động</a>
+                                            <a href="#" class="dropdown-item">Kinh dị</a>
                                             <a href="#" class="dropdown-item">Hài hước</a>
                                             <a href="#" class="dropdown-item">Hoạt hình</a>
                                             <a href="#" class="dropdown-item">Lãng mạn</a>
@@ -97,7 +97,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="{{ route('tintuc') }}" class="nav-item nav-link text-white">Tin Tức Điện Ảnh</a>
+                            <a href="news.html" class="nav-item nav-link text-white">Tin Tức Điện Ảnh</a>
                             <a href="contact.html" class="nav-item nav-link me-2 text-white">Liên Hệ</a>
                         </div>
                         <a href="https://www.youtube.com/results?search_query=movie+trailer" target="_blank"
@@ -108,52 +108,20 @@
             </div>
         </div>
     </div>
-    
-    <div class="container-fluid carousel bg-dark px-0">
-        <div class="row g-0 justify-content-end">
-            <div class="col-12">
-                <div class="header-carousel owl-carousel bg-dark py-5">
-                    <div class="row g-0 header-carousel-item align-items-center">
-                        <div class="col-xl-6 carousel-img wow fadeInLeft" data-wow-delay="0.1s">
-                            <img src="{{ asset('img/muado.png') }}" class="img-fluid w-100" alt="Phim Mưa Đỏ">
-                        </div>
-                        <div class="col-xl-6 carousel-content p-4">
-                            <h4 class="text-uppercase fw-bold mb-4 wow fadeInRight text-white" data-wow-delay="0.1s"
-                                style="letter-spacing: 3px;">Phim Hot Mới Ra Mắt</h4>
-                            <h1 class="display-3 text-capitalize mb-4 wow fadeInRight text-success" data-wow-delay="0.3s">Review Phim
-                                Hành Động <br> "Phim Mưa Đỏ"</h1>
-                            <p class="text-light wow fadeInRight" data-wow-delay="0.5s">Đánh giá chi tiết, không spoil,
-                                cập nhật mới nhất.</p>
-                            <a class="btn btn-success rounded-pill py-3 px-5 wow fadeInRight" data-wow-delay="0.7s"
-                                href="#">Xem Review Ngay</a>
-                        </div>
-                    </div>
-                    <div class="row g-0 header-carousel-item align-items-center">
-                        <div class="col-xl-6 carousel-img wow fadeInLeft" data-wow-delay="0.1s">
-                            <img src="{{ asset('img/bogia.png') }}" class="img-fluid w-100" alt="Phim Bố Già">
-                        </div>
-                        <div class="col-xl-6 carousel-content p-4">
-                            <h4 class="text-uppercase fw-bold mb-4 wow fadeInRight text-white" data-wow-delay="0.1s"
-                                style="letter-spacing: 3px;">Tổng Hợp Phim Hay</h4>
-                            <h1 class="display-3 text-capitalize mb-4 wow fadeInRight text-success" data-wow-delay="0.3s">Tuyển Tập
-                                Phim Chiếu Rạp <br> Được Đánh Giá Cao Nhất</h1>
-                            <p class="text-light wow fadeInRight" data-wow-delay="0.5s">Từ Lãng Mạn đến Kinh Dị, mọi thể
-                                loại đều có.</p>
-                            <a class="btn btn-success rounded-pill py-3 px-5 wow fadeInRight" data-wow-delay="0.7s"
-                                href="#">Khám Phá</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+    <div class="container-fluid bg-dark p-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center">
+            <h1 class="display-3 text-success mb-4">Phim Thể Loại Hành Động</h1>
+            <p class="text-light fs-5">Tổng hợp các bài đánh giá về những bộ phim hành động gay cấn, kịch tính nhất từ Việt Nam và Quốc tế.</p>
         </div>
     </div>
-    
+
     <div class="container-fluid product py-5 bg-dark">
         <div class="container py-5">
             <div class="tab-class">
                 <div class="row g-4 mb-5">
                     <div class="col-12 text-center wow fadeIn" data-wow-delay="0.1s">
-                        <h1 class="text-success">Phim Mới & Nổi Bật</h1>
+                        <h2 class="text-success">Tuyển Chọn Phim Hành Động Đặc Sắc</h2>
                     </div>
                 </div>
                 <div class="tab-content">
@@ -171,10 +139,10 @@
                                             </div>
                                         </div>
                                         <div class="text-center rounded-bottom p-4 bg-black">
-                                            <a href="#" class="d-block mb-2 text-success">Kinh Dị</a>
-                                            <a href="#" class="d-block h4 text-white">Phim Làm Giàu Với Ma <br> (Phim Chiếu Rạp)</a>
-                                            <span class="me-2 fs-5 text-light">2024</span>
-                                            <span class="text-success fs-5">⭐ 9.5/10</span>
+                                            <a href="#" class="d-block mb-2 text-success">Hành Động</a>
+                                            <a href="#" class="d-block h4 text-white">Phim Fast & Furious X <br> (Phim Chiếu Rạp)</a>
+                                            <span class="me-2 fs-5 text-light">2023</span>
+                                            <span class="text-success fs-5">⭐ 9.1/10</span>
                                         </div>
                                     </div>
                                     <div
@@ -206,10 +174,10 @@
                                             </div>
                                         </div>
                                         <div class="text-center rounded-bottom p-4 bg-black">
-                                            <a href="#" class="d-block mb-2 text-success">Kịch tính </a>
-                                            <a href="#" class="d-block h4 text-white">Phim Mai <br> (Phim Chiếu Rạp)</a>
+                                            <a href="#" class="d-block mb-2 text-success">Hành Động</a>
+                                            <a href="#" class="d-block h4 text-white">Phim John Wick: Chapter 4 <br> (Phim Chiếu Rạp)</a>
                                             <span class="me-2 fs-5 text-light">2023</span>
-                                            <span class="text-success fs-5">⭐ 8.9/10</span>
+                                            <span class="text-success fs-5">⭐ 9.3/10</span>
                                         </div>
                                     </div>
                                     <div
@@ -240,10 +208,10 @@
                                             </div>
                                         </div>
                                         <div class="text-center rounded-bottom p-4 bg-black">
-                                            <a href="#" class="d-block mb-2 text-success">Hành động</a>
-                                            <a href="#" class="d-block h4 text-white">Phim Liễu Chu Ký <br> (Phim Điện Ảnh)</a>
+                                            <a href="#" class="d-block mb-2 text-success">Hành Động</a>
+                                            <a href="#" class="d-block h4 text-white">Phim The Gray Man <br> (Phim Điện Ảnh)</a>
                                             <span class="me-2 fs-5 text-light">2022</span>
-                                            <span class="text-success fs-5">⭐ 8.5/10</span>
+                                            <span class="text-success fs-5">⭐ 8.0/10</span>
                                         </div>
                                     </div>
                                     <div
@@ -267,7 +235,7 @@
                                 <div class="product-item rounded wow fadeInUp bg-dark border border-success" data-wow-delay="0.7s">
                                     <div class="product-item-inner border-0 rounded">
                                         <div class="product-item-inner-item">
-                                            <img src="{{ asset('img/lactroi.png') }}" class="img-fluid w-100 rounded-top"
+                                            <img src="{{ asset('img/muado.png') }}" class="img-fluid w-100 rounded-top"
                                                 alt="Poster Phim">
                                             <div class="product-new bg-success text-dark">TOP</div>
                                             <div class="product-details">
@@ -275,10 +243,10 @@
                                             </div>
                                         </div>
                                         <div class="text-center rounded-bottom p-4 bg-black">
-                                            <a href="#" class="d-block mb-2 text-success">Hài hước</a>
-                                            <a href="#" class="d-block h4 text-white">Phim Lạc Trôi <br> (Phim Ngắn)</a>
+                                            <a href="#" class="d-block mb-2 text-success">Hành Động</a>
+                                            <a href="#" class="d-block h4 text-white">Phim Mưa Đỏ <br> (Phim Ngắn/Indie)</a>
                                             <span class="me-2 fs-5 text-light">2024</span>
-                                            <span class="text-success fs-5">⭐ 9.8/10</span>
+                                            <span class="text-success fs-5">⭐ 9.0/10</span>
                                         </div>
                                     </div>
                                     <div
@@ -292,7 +260,7 @@
                                                 <i class="fas fa-star text-success"></i>
                                                 <i class="fas fa-star text-success"></i>
                                                 <i class="fas fa-star text-success"></i>
-                                                <i class="fas fa-star text-success"></i>
+                                                <i class="fas fa-star text-secondary"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -309,7 +277,7 @@
     </div>
     
     @yield('body')
-    
+
     <div class="container-fluid py-5 bg-dark">
         <div class="container py-5">
             <div class="row g-4">
@@ -331,7 +299,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="container-fluid footer py-2 wow fadeIn bg-black" data-wow-delay="0.1s">
         <div class="container py-2">
             <div class="row g-2">
@@ -363,10 +331,10 @@
             </div>
         </div>
     </div>
-    
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    
     <script src="{{ asset('lib/wow/wow.min.js') }}"></script>
     <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
