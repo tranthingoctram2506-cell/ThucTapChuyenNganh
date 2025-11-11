@@ -8,10 +8,10 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('admin');
 })->name('admin');
-Route::get('/admin/category', function () {
-    return view('admin/category/category-list');
-})->name('category');
-Route::get('/admin/product', function () {
-    return view('admin/product/product-list');
-})->name('product');
+Route::get('/admin/quanlyphim', function () {
+    return view('admin/quanlyphim/danhsachphim');
+})->name('danhsachphim');
+Route::get('/admin/theloai', function () {
+    return view('admin/quanlyphim/theloai');
+})->name('theloai');
 ?>

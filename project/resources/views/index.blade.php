@@ -1,55 +1,155 @@
 @extends('layout/home')
 
 @section('body')
-    <div class="container-fluid featured pt-3">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="featured-item">
-                        <div class="featured-icon">
-                            <i class="fas fa-globe-americas fa-3x"></i>
-                        </div>
-                        <div class="featured-content">
-                            <div class="featured-title">
-                                <h4>Phim Toàn Cầu</h4>
+    <div class="tab-content">
+                    <div id="tab-1" class="tab-pane fade show p-0 active">
+                        <div class="row g-4">
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="product-item rounded wow fadeInUp bg-dark border border-success" data-wow-delay="0.1s">
+                                    <div class="product-item-inner border-0 rounded">
+                                        <div class="product-item-inner-item">
+                                            <img src="img/lamgiauma.png" class="img-fluid w-100 rounded-top"
+                                                alt="Poster Phim">
+                                            <div class="product-new bg-success text-dark">NEW</div>
+                                            <div class="product-details">
+                                                <a href="#"><i class="fa fa-eye fa-1x text-success"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="text-center rounded-bottom p-4 bg-black">
+                                            <a href="#" class="d-block mb-2 text-success">Kinh Dị</a>
+                                            <a href="#" class="d-block h4 text-white">Phim Làm Giàu Với Ma <br> (Phim Chiếu Rạp)</a>
+                                            <span class="me-2 fs-5 text-light">2024</span>
+                                            <span class="text-success fs-5">⭐ 9.5/10</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="product-item-add border border-top-0 border-success rounded-bottom text-center p-4 pt-0">
+                                        <a href="#"
+                                            class="btn btn-success border-white rounded-pill py-2 px-4 mb-4"><i
+                                                class="fas fa-book-open me-2"></i> Xem Review</a>
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <div class="d-flex">
+                                                <i class="fas fa-star text-success"></i>
+                                                <i class="fas fa-star text-success"></i>
+                                                <i class="fas fa-star text-success"></i>
+                                                <i class="fas fa-star text-success"></i>
+                                                <i class="fas fa-star text-secondary"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <a class="featured-btn">Chi Tiết</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
-                    <div class="featured-item">
-                        <div class="featured-icon">
-                            <i class="fas fa-video fa-3x"></i>
-                        </div>
-                        <div class="featured-content">
-                            <div class="featured-title">
-                                <h4>Đánh Giá Sớm</h4>
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="product-item rounded wow fadeInUp bg-dark border border-success" data-wow-delay="0.3s">
+                                    <div class="product-item-inner border-0 rounded">
+                                        <div class="product-item-inner-item">
+                                            <img src="img/mai.png" class="img-fluid w-100 rounded-top"
+                                                alt="Poster Phim">
+                                            <div class="product-sale bg-success text-dark">HOT</div>
+                                            <div class="product-details">
+                                                <a href="#"><i class="fa fa-eye fa-1x text-success"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="text-center rounded-bottom p-4 bg-black">
+                                            <a href="#" class="d-block mb-2 text-success">Kịch tính </a>
+                                            <a href="#" class="d-block h4 text-white">Phim Mai <br> (Phim Chiếu Rạp)</a>
+                                            <span class="me-2 fs-5 text-light">2023</span>
+                                            <span class="text-success fs-5">⭐ 8.9/10</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="product-item-add border border-top-0 border-success rounded-bottom  text-center p-4 pt-0">
+                                        <a href="#"
+                                            class="btn btn-success border-white rounded-pill py-2 px-4 mb-4"><i
+                                                class="fas fa-book-open me-2"></i> Xem Review</a>
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <div class="d-flex">
+                                                <i class="fas fa-star text-success"></i>
+                                                <i class="fas fa-star text-success"></i>
+                                                <i class="fas fa-star text-success"></i>
+                                                <i class="fas fa-star text-success"></i>
+                                                <i class="fas fa-star text-secondary"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <a class="featured-btn">Chi Tiết</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="featured-item">
-                        <div class="featured-icon">
-                            <i class="fas fa-users fa-3x"></i>
-                        </div>
-                        <div class="featured-content">
-                            <div class="featured-title">
-                                <h4>Cộng Đồng</h4>
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="product-item rounded wow fadeInUp bg-dark border border-success" data-wow-delay="0.5s">
+                                    <div class="product-item-inner border-0 rounded">
+                                        <div class="product-item-inner-item">
+                                            <img src="img/lieuchuky.png" class="img-fluid w-100 rounded-top"
+                                                alt="Poster Phim">
+                                            <div class="product-details">
+                                                <a href="#"><i class="fa fa-eye fa-1x text-success"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="text-center rounded-bottom p-4 bg-black">
+                                            <a href="#" class="d-block mb-2 text-success">Hành động</a>
+                                            <a href="#" class="d-block h4 text-white">Phim Liễu Chu Ký <br> (Phim Điện Ảnh)</a>
+                                            <span class="me-2 fs-5 text-light">2022</span>
+                                            <span class="text-success fs-5">⭐ 8.5/10</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="product-item-add border border-top-0 border-success rounded-bottom  text-center p-4 pt-0">
+                                        <a href="#"
+                                            class="btn btn-success border-white rounded-pill py-2 px-4 mb-4"><i
+                                                class="fas fa-book-open me-2"></i> Xem Review</a>
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <div class="d-flex">
+                                                <i class="fas fa-star text-success"></i>
+                                                <i class="fas fa-star text-success"></i>
+                                                <i class="fas fa-star text-success"></i>
+                                                <i class="fas fa-star text-success"></i>
+                                                <i class="fas fa-star text-secondary"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <a class="featured-btn">Chi Tiết</a>
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="product-item rounded wow fadeInUp bg-dark border border-success" data-wow-delay="0.7s">
+                                    <div class="product-item-inner border-0 rounded">
+                                        <div class="product-item-inner-item">
+                                            <img src="img/lactroi.png" class="img-fluid w-100 rounded-top"
+                                                alt="Poster Phim">
+                                            <div class="product-new bg-success text-dark">TOP</div>
+                                            <div class="product-details">
+                                                <a href="#"><i class="fa fa-eye fa-1x text-success"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="text-center rounded-bottom p-4 bg-black">
+                                            <a href="#" class="d-block mb-2 text-success">Hài hước</a>
+                                            <a href="#" class="d-block h4 text-white">Phim Lạc Trôi <br> (Phim Ngắn)</a>
+                                            <span class="me-2 fs-5 text-light">2024</span>
+                                            <span class="text-success fs-5">⭐ 9.8/10</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="product-item-add border border-top-0 border-success rounded-bottom  text-center p-4 pt-0">
+                                        <a href="#"
+                                            class="btn btn-success border-white rounded-pill py-2 px-4 mb-4"><i
+                                                class="fas fa-book-open me-2"></i> Xem Review</a>
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <div class="d-flex">
+                                                <i class="fas fa-star text-success"></i>
+                                                <i class="fas fa-star text-success"></i>
+                                                <i class="fas fa-star text-success"></i>
+                                                <i class="fas fa-star text-success"></i>
+                                                <i class="fas fa-star text-success"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center mt-5">
+                                <a href="#" class="btn btn-success rounded-pill py-3 px-5 text-dark">Tải thêm Phim / Xem tất cả</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid py-5">
-        <div class="container">
-            <h2 class="mb-4 text-center">Các Bài Review Mới Nhất</h2>
-            <p class="text-center text-muted">Đây là nơi hiển thị các bài review phim mới nhất được lấy từ cơ sở dữ liệu.</p>
-            </div>
     </div>
     @endsection

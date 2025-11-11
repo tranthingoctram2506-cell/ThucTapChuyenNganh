@@ -75,7 +75,29 @@
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <div class="navbar-nav ms-auto py-0">
                             <a href="{{ route('home') }}" class="nav-item nav-link active text-white">Trang Chủ</a>
-                            <a href="review.html" class="nav-item nav-link text-white">Review Phim</a>
+                            <div class="nav-item dropdown">
+                                <a href="review.html" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Thể loại</a>
+                                <div class="dropdown-menu bg-success border-0 rounded-0 m-0">
+                                    <div class="d-flex p-2">
+                                        <div class="col-6">
+                                            <h6 class="dropdown-header text-dark fw-bold">Thể loại phim</h6>
+                                            <a href="#" class="dropdown-item">Hành động</a>
+                                            <a href="#" class="dropdown-item">Kinh dị</a>
+                                            <a href="#" class="dropdown-item">Hài hước</a>
+                                            <a href="#" class="dropdown-item">Hoạt hình</a>
+                                            <a href="#" class="dropdown-item">Lãng mạn</a>
+                                        </div>
+                                        <div class="col-6">
+                                            <h6 class="dropdown-header text-dark fw-bold">Phim theo Quốc gia</h6>
+                                            <a href="#" class="dropdown-item">Việt Nam</a>
+                                            <a href="#" class="dropdown-item">Mỹ</a>
+                                            <a href="#" class="dropdown-item">Trung Quốc</a>
+                                            <a href="#" class="dropdown-item">Nhật Bản</a>
+                                            <a href="#" class="dropdown-item">Hàn Quốc</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <a href="news.html" class="nav-item nav-link text-white">Tin Tức Điện Ảnh</a>
                             <a href="contact.html" class="nav-item nav-link me-2 text-white">Liên Hệ</a>
                         </div>
@@ -284,6 +306,7 @@
             </div>
         </div>
     </div>
+    @yield('body')
     <div class="container-fluid py-5 bg-dark">
         <div class="container py-5">
             <div class="row g-4">
@@ -305,10 +328,10 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid footer py-5 wow fadeIn bg-black" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-md-6 col-lg-6 col-xl-3">
+    <div class="container-fluid footer py-2 wow fadeIn bg-black" data-wow-delay="0.1s">
+        <div class="container py-2">
+            <div class="row g-2">
+                <div class="col-md-6 col-lg-6 col-xl-6">
                     <div class="footer-item">
                         <h4 class="mb-4 text-success"><i class="fas fa-film me-2"></i>MovieReview</h4>
                         <p class="text-light">Nền tảng cung cấp các bài đánh giá phim chuyên sâu và khách quan nhất.</p>
@@ -323,27 +346,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="footer-item">
-                        <h4 class="mb-4 text-success">Đường Dẫn Nhanh</h4>
-                        <a href="#" class="text-light d-block mb-2">Review Mới Nhất</a>
-                        <a href="#" class="text-light d-block mb-2">Phim Sắp Chiếu</a>
-                        <a href="#" class="text-light d-block mb-2">Box Office</a>
-                        <a href="#" class="text-light d-block mb-2">Diễn Viên Nổi Bật</a>
-                        <a href="#" class="text-light d-block mb-2">Điều Khoản & Dịch Vụ</a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="footer-item">
-                        <h4 class="mb-4 text-success">Các Thể Loại</h4>
-                        <a href="#" class="text-light d-block mb-2">Hành Động</a>
-                        <a href="#" class="text-light d-block mb-2">Kinh Dị</a>
-                        <a href="#" class="text-light d-block mb-2">Hài Hước</a>
-                        <a href="#" class="text-light d-block mb-2">Lãng Mạn</a>
-                        <a href="#" class="text-light d-block mb-2">Khoa Học Viễn Tưởng</a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="col-md-6 col-lg-6 col-xl-6">
                     <div class="footer-item">
                         <h4 class="mb-4 text-success">Đăng Ký Nhận Tin</h4>
                         <p class="text-light">Nhận các bài review phim mới nhất qua email.</p>
@@ -356,7 +359,7 @@
             </div>
         </div>
     </div>
- @yield('body')
+ 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
