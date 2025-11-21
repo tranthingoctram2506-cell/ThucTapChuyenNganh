@@ -40,14 +40,13 @@
 
 <div class="container-fluid">
     <div class="row">
-        <!-- Sidebar (sử dụng min-vh-100 để đảm bảo chiều cao) -->
+        <!-- Sidebar  -->
         <aside class="col-md-2 p-0 bg-dark min-vh-100">
             <div class="d-flex flex-column pt-3">
                 <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="{{ route('admin') }}"><i class="fa fa-dashboard me-2"></i> Tổng quan</a>
                 <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="{{ route('danhsachphim') }}"><i class="fa fa-film me-2"></i> Quản lý phim</a>
                 <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="{{ route('phimchoduyet') }}"><i class="fa fa-film me-2"></i> Phim chờ duyệt</a>
-                <a class="text-decoration-none text-white py-2 px-3 bg-secondary" href="{{ route('theloai') }}"><i class="fa fa-tags me-2"></i> Thể loại</a>
-                <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="#"><i class="fa fa-pen me-2"></i> Review</a>
+                <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="{{ route('theloai') }}"><i class="fa fa-tags me-2"></i> Thể loại</a>
                 <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="#"><i class="fa fa-users me-2"></i> Người dùng</a>
                 <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="#"><i class="fa fa-comments me-2"></i> Bình luận</a>
                 <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="#"><i class="fa fa-cog me-2"></i> Cài đặt</a>
@@ -102,7 +101,5 @@
     <!-- Custom scripts for this page-->
     <script src="js/sb-admin-datatables.min.js"></script>
     <script src="js/sb-admin-charts.min.js"></script>
-
-
 </body>
 </html>
