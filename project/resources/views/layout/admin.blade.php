@@ -44,9 +44,8 @@
         <aside class="col-md-2 p-0 bg-dark min-vh-100">
             <div class="d-flex flex-column pt-3">
                 <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="{{ route('admin') }}"><i class="fa fa-dashboard me-2"></i> Tổng quan</a>
-                <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="{{ route('danhsachphim') }}"><i class="fa fa-film me-2"></i> Quản lý phim</a>
-                <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="{{ route('phimchoduyet') }}"><i class="fa fa-film me-2"></i> Phim chờ duyệt</a>
-                <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="{{ route('theloai') }}"><i class="fa fa-tags me-2"></i> Thể loại</a>
+                <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="{{ route('admin.product.index') }}"><i class="fa fa-film me-2"></i> Quản lý phim</a> {{-- ĐÃ SỬA --}}<a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="{{ route('admin.phimchoduyet') }}"><i class="fa fa-film me-2"></i> Phim chờ duyệt</a>
+                <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="{{ route('admin.category.index') }}"><i class="fa fa-tags me-2"></i> Thể loại</a>
                 <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="#"><i class="fa fa-users me-2"></i> Người dùng</a>
                 <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="#"><i class="fa fa-comments me-2"></i> Bình luận</a>
                 <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="#"><i class="fa fa-cog me-2"></i> Cài đặt</a>
@@ -72,11 +71,10 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-inline">
+              @csrf
+              <button type="submit" class="btn btn-primary">{{ __('Logout') }}</button>
+            </form>
           </div>
         </div>
       </div>
