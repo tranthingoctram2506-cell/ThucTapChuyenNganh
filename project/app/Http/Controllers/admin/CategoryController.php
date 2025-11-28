@@ -20,14 +20,10 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|max:255|unique:categories,name',
-        ]);
-
-        $slug = Str::slug($validatedData['name']);
+        $slug = Str::slug($request['name']);
 
         $category = Category::create([
-            'name' => $validatedData['name'],
+            'name' => $request['name'],
             'slug' => $slug,
         ]);
 
@@ -39,22 +35,18 @@ class CategoryController extends Controller
 
     public function edit($id)
     {
-        $category = Category::findOrFail($id);
+        $category = Category::find($id);
         return view('admin.category.edittheloai', compact('category'));
     }
 
     public function update(Request $request, $id)
     {
-        $category = Category::findOrFail($id);
-
-        $validatedData = $request->validate([
-            'name' => 'required|max:255|unique:categories,name,' . $id,
-        ]);
+        $category = Category::find($id);
         
-        $slug = Str::slug($validatedData['name']);
+        $slug = Str::slug($request['name']);
 
         $category->update([
-            'name' => $validatedData['name'],
+            'name' => $request['name'],
             'slug' => $slug,
         ]);
 
@@ -65,7 +57,7 @@ class CategoryController extends Controller
     }
     public function destroy($id)
     {
-        $category = Category::findOrFail($id);
+        $category = Category::find($id);
 
         if($category->delete())
             return redirect()->route('admin.category.index')->with('success', 'Xóa thể loại thành công!');

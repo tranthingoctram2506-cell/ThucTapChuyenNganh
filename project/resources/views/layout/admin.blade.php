@@ -44,8 +44,9 @@
         <aside class="col-md-2 p-0 bg-dark min-vh-100">
             <div class="d-flex flex-column pt-3">
                 <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="{{ route('admin') }}"><i class="fa fa-dashboard me-2"></i> Tổng quan</a>
-                <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="{{ route('admin.product.index') }}"><i class="fa fa-film me-2"></i> Quản lý phim</a> {{-- ĐÃ SỬA --}}<a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="{{ route('admin.phimchoduyet') }}"><i class="fa fa-film me-2"></i> Phim chờ duyệt</a>
+                <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="{{ route('admin.product.index') }}"><i class="fa fa-film me-2"></i> Quản lý phim</a> 
                 <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="{{ route('admin.category.index') }}"><i class="fa fa-tags me-2"></i> Thể loại</a>
+                <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="{{ route('admin.phimchoduyet') }}"><i class="fa fa-film me-2"></i> Phim chờ duyệt</a>
                 <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="#"><i class="fa fa-users me-2"></i> Người dùng</a>
                 <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="#"><i class="fa fa-comments me-2"></i> Bình luận</a>
                 <a class="text-decoration-none text-white py-2 px-3 hover-bg-secondary" href="#"><i class="fa fa-cog me-2"></i> Cài đặt</a>

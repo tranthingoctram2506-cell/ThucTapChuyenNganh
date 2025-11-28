@@ -22,11 +22,9 @@ class PhimController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|max:255|unique:phims,name',
-        ]);
-
-        $phim = Phim::create($validatedData); 
+        $phim = Phim::create([
+            'name'=>$request->name,
+        ]); 
         
         if($phim)
             return redirect()->route('admin.product.index')->with('success', 'Thêm phim thành công!');
@@ -35,18 +33,16 @@ class PhimController extends Controller
     }
 
     public function edit($id){
-        $phim = Phim::findOrFail($id); 
+        $phim = Phim::find($id); 
         return view('admin.product.editphim', compact('phim'));
     }
 
     public function update(Request $request, $id){
-        $phim = Phim::findOrFail($id);
-        
-        $validatedData = $request->validate([
-            'name' => 'required|max:255|unique:phims,name,' . $id,
-        ]);
+        $phim = Phim::find($id);
 
-        $phim->update($validatedData); 
+        $phim->update([
+            'name'=>$request->name,
+        ]); 
         
         if($phim)
             return redirect()->route('admin.product.index')->with('success', 'Cập nhật phim thành công!');
@@ -55,7 +51,7 @@ class PhimController extends Controller
     }
 
     public function destroy($id){
-        $phim = Phim::findOrFail($id); 
+        $phim = Phim::find($id); 
         if($phim->delete())
             return redirect()->route('admin.product.index')->with('success', 'Xóa phim thành công!');
         else
