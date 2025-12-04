@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Models\Category;
 use \App\Models\Phim;
+use Illuminate\Support\Facades\Auth;
+
 class HomeController extends Controller
 {
     /**
@@ -14,7 +16,8 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $categories = Category::all();
+        view()->share('categories', $categories);
     }
 
     /**
@@ -24,10 +27,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $categories = Category::where('status', 1)->get(); 
-        $phims = Phim::where('status', 1)->get();
-        return view('home', compact('categories', 'phims'));
+        $categories = Category::all();
+        return view('home.index', compact('categories'));
     }
+    
     public function logout()
     {
         if(Auth::check()){

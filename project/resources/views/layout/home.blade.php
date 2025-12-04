@@ -32,7 +32,7 @@
                 <div class="d-inline-flex align-items-center">
                     <a href="{{ route('home') }}" class="navbar-brand p-0">
                         <h1 class="display-5 text-success m-0"><i
-                                class="fas fa-film text-white me-2"></i>MovieReview</h1>
+                                class="fas fa-film text-white me-2"></i>Movie</h1>
                     </a>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                 <nav class="navbar navbar-expand-lg navbar-dark bg-success ">
                     <a href="{{ route('home') }}" class="navbar-brand d-block d-lg-none">
                         <h1 class="display-5 text-white m-0"><i
-                                class="fas fa-film text-dark me-2"></i>MovieReview</h1>
+                                class="fas fa-film text-dark me-2"></i>Movie</h1>
                     </a>
                     <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarCollapse">
@@ -76,26 +76,20 @@
                             <a href="{{ route('home') }}" class="nav-item nav-link active text-white">Trang Chủ</a>
                             <div class="nav-item dropdown">
                                 <a href="review.html" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Thể loại</a>
-                                <div class="dropdown-menu bg-success border-0 rounded-0 m-0">
-                                    <div class="d-flex p-2">
-                                        <div class="col-6">
-                                            <h6 class="dropdown-header text-dark fw-bold">Thể loại phim</h6>
-                                            <a href="{{ route('hanhdong') }}"class="dropdown-item">Hành động</a>
-                                            <a href="{{ route('kinhdi') }}" class="dropdown-item">Kinh dị</a>
-                                            <a href="#" class="dropdown-item">Hài hước</a>
-                                            <a href="#" class="dropdown-item">Hoạt hình</a>
-                                            <a href="#" class="dropdown-item">Lãng mạn</a>
-                                        </div>
-                                        <div class="col-6">
-                                            <h6 class="dropdown-header text-dark fw-bold">Phim theo Quốc gia</h6>
-                                            <a href="#" class="dropdown-item">Việt Nam</a>
-                                            <a href="#" class="dropdown-item">Mỹ</a>
-                                            <a href="#" class="dropdown-item">Trung Quốc</a>
-                                            <a href="#" class="dropdown-item">Nhật Bản</a>
-                                            <a href="#" class="dropdown-item">Hàn Quốc</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <ul class="dropdown-menu bg-success border-0 rounded-0 m-0">
+                                    @forelse($categories as $object)
+                                    <li>
+                                        <a href="" class="dropdown-item">{{ $object->name }}</a>
+                                    </li>
+                                    @empty
+                                    <h1>loi</h1>
+                                    @endforelse
+                                    <!-- <a href="{{ route('hanhdong') }}"class="dropdown-item">Hành động</a>
+                                    <a href="{{ route('kinhdi') }}" class="dropdown-item">Kinh dị</a>
+                                    <a href="#" class="dropdown-item">Hài hước</a>
+                                    <a href="#" class="dropdown-item">Hoạt hình</a>
+                                    <a href="#" class="dropdown-item">Lãng mạn</a> -->
+                                </ul>
                             </div>
                             <a href="{{ route('tintuc') }}" class="nav-item nav-link text-white">Tin Tức Điện Ảnh</a>
                             <a href="contact.html" class="nav-item nav-link me-2 text-white">Liên Hệ</a>

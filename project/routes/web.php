@@ -7,11 +7,11 @@ use App\Http\Controllers\admin\PhimController;
 use App\Http\Controllers\admin\CategoryController; 
 
 Route::get('/', function () {
-    return view('index');
+    return view('home.index');
 })->name('home');
 
 Route::get('/admin', function () {
-    return view('admin');
+    return view('admin.admin');
 })->name('admin');
 
 Route::group(['prefix'=> 'admin','as'=> 'admin.'],function() {
@@ -38,6 +38,12 @@ Route::get('/tintuc', function () {
 })->name('tintuc');
 Auth::routes(); 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
-    ->middleware('auth')
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
+//     ->middleware('auth')
+//     ->name('home');
+
+Route::post('/logout', [App\Http\Controllers\HomeController::class, 'logout'])
+    ->name('logout');
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])
     ->name('home');
