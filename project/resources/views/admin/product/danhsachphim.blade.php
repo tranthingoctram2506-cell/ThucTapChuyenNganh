@@ -15,6 +15,11 @@
       <tr>
        <th>ID</th>
        <th>Tiêu Đề Phim</th>
+       <th>Hình Ảnh</th>
+       <th>Mô Tả</th>
+       <th>Nội Dung</th>
+       <th>Trạng Thái</th>
+       <th>Giá</th>
        <th>view</th>
        <th>edit</th>
        <th>delete</th>
@@ -24,7 +29,7 @@
       @forelse($phims as $phim) 
       <tr>
         <th>{{ $phim->id }}</th>
-        <td>{{ $phim->name }}</td>
+        <td>{{ $phim->category->name}}</td>
         <td><a href=""><i class="fa-solid fa-eye text-info"></i></a></td>
         <td>
             <a href="{{route('admin.product.edit', ['product'=>$phim->id])}}" 
@@ -51,3 +56,6 @@
   </div>
 </div>
 @endsection
+        
+
+        

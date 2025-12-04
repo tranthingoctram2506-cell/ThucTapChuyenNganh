@@ -24,7 +24,9 @@ class CategoryController extends Controller
 
         $category = Category::create([
             'name' => $request['name'],
+            'image' => $request['image'],
             'slug' => $slug,
+            'status' => $request['status'],
         ]);
 
         if($category)
@@ -47,7 +49,9 @@ class CategoryController extends Controller
 
         $category->update([
             'name' => $request['name'],
+            'image' => $request['image'],
             'slug' => $slug,
+            'status' => $request['status'],
         ]);
 
         if($category)

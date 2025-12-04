@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use \App\Models\Category;
 class HomeController extends Controller
 {
     /**
@@ -23,7 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $categories = Category::where('status', 1)->get(); 
+        $phims = Phim::where('status', 1)->get();
+        return view('home', compact('categories', 'phims'));
     }
     public function logout()
     {

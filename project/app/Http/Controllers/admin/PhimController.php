@@ -11,7 +11,7 @@ class PhimController extends Controller
 {
     public function index()
     {
-        $phims = Phim::orderBy('id', 'desc')->get(); 
+        $phims = Phim::all();
         return view('admin.product.danhsachphim', compact('phims'));
     }
 
@@ -24,6 +24,12 @@ class PhimController extends Controller
     {
         $phim = Phim::create([
             'name'=>$request->name,
+            'image'=>$request->image,
+            'description'=>$request->description,
+            'content'=>$request->content,
+            'price'=>$request->price,
+            'status'=>$request->status,
+            'category_id'=>$request->category_id,
         ]); 
         
         if($phim)
@@ -42,6 +48,12 @@ class PhimController extends Controller
 
         $phim->update([
             'name'=>$request->name,
+            'image'=>$request->image,
+            'description'=>$request->description,
+            'content'=>$request->content,
+            'price'=>$request->price,
+            'status'=>$request->status,
+            'category_id'=>$request->category_id,
         ]); 
         
         if($phim)
