@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('phims', function (Blueprint $table) {
             $table->id();
-            $table->string('name');;
+            $table->string('name');
+            $table->string('image');
+            $table->text('description');
+            $table->text('content');
+            $table->decimal('price', 8, 2);
+            $table->boolean('status');
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }

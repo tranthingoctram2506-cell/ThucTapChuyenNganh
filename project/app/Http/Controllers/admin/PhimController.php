@@ -6,6 +6,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Phim;
+use App\Models\Category;
 
 class PhimController extends Controller
 {
@@ -17,7 +18,8 @@ class PhimController extends Controller
 
     public function create()
     {
-        return view('admin.product.addphim'); 
+        $categories = Category::all();
+        return view('admin.product.addphim', compact('categories')); 
     }
 
     public function store(Request $request)
@@ -39,8 +41,9 @@ class PhimController extends Controller
     }
 
     public function edit($id){
-        $phim = Phim::find($id); 
-        return view('admin.product.editphim', compact('phim'));
+        $phim = Phim::find($id);
+        $categories = Category::all();
+        return view('admin.product.editphim', compact('phim', 'categories'));
     }
 
     public function update(Request $request, $id){
