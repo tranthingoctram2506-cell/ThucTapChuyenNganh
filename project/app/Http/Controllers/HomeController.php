@@ -16,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $categories = Category::all();
+        $categories = Category::where('status', 1)->get();
         view()->share('categories', $categories);
     }
 
@@ -27,8 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        return view('home.index', compact('categories'));
+        return view('home.index');
     }
     
     public function logout()

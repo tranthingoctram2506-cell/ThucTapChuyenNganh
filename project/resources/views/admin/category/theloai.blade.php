@@ -27,7 +27,7 @@
             <tr>
                 <th>{{ $category->id }}</th>
                 <td>{{ $category->name }}</td>
-                <td><img src="{{ $category->image }}" style="max-width: 100px;"></td>
+                <td><img src="{{ $category->image }}" style="max-width: 120px;"></td>
                 <td>
                     @if($category->status==1)
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">

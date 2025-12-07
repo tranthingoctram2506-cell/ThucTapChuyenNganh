@@ -38,10 +38,6 @@ Route::get('/tintuc', function () {
 })->name('tintuc');
 Auth::routes(); 
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
-//     ->middleware('auth')
-//     ->name('home');
-
 Route::post('/logout', [App\Http\Controllers\HomeController::class, 'logout'])
     ->name('logout');
 

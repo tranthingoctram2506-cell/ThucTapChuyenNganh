@@ -1,6 +1,4 @@
 <?php
-// app/Http/Controllers/admin/PhimController.php
-
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
@@ -12,7 +10,7 @@ class PhimController extends Controller
 {
     public function index()
     {
-        $phims = Phim::all();
+        $phims = Phim::with('category')->orderBy('id', 'desc')->get();
         return view('admin.product.danhsachphim', compact('phims'));
     }
 
