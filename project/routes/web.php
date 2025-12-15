@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController; 
 use App\Http\Controllers\admin\PhimController; 
 use App\Http\Controllers\admin\CategoryController; 
+use App\Models\Category; 
+use Illuminate\Support\Facades\View;
 
 Route::get('/', function () {
     return view('home.index');
@@ -36,10 +38,12 @@ Route::get('/kinhdi', function () {
 Route::get('/tintuc', function () {
     return view('home.tintuc');
 })->name('tintuc');
+
 Auth::routes(); 
-
-Route::post('/logout', [App\Http\Controllers\HomeController::class, 'logout'])
-    ->name('logout');
-
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])
     ->name('home');
+Route::get('/category_product/{category}', [App\Http\Controllers\HomeController::class, 'category_product'])
+    ->name('category_product');
+Route::get('/category_product/single_product/{category}', [App\Http\Controllers\HomeController::class, 'single_product'])
+    ->name('single_product'); 
+    
