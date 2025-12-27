@@ -1,31 +1,25 @@
 @extends('layout/home')
 @section('body')
-
 @forelse($phim as $object)
-
 <!-- Single Page Header -->
 <div class="container-fluid page-header py-5">
     <h1 class="text-center text-white display-6 wow fadeInUp" data-wow-delay="0.1s">Single Product</h1>
 </div>
-
 <!-- Single Product -->
 <div class="container-fluid shop py-5">
     <div class="container py-5">
-
         <div class="row justify-content-center">
             <div class="col-lg-7 col-xl-9">
-
                 <div class="single-product">
                     <div class="col-12 mb-4">
                         <div class="product-image-wrapper">
                             <img src="{{$object->image}}" class="product-image" alt="Image">
                         </div>
                     </div>
-
                     <!-- THÔNG TIN SẢN PHẨM -->
                     <div class="col-12">
                         <p class="mb-3">Tên phim: {{$object->name}}</p>
-                        <p class="mb-3">Lượt xem: {{$object->price}}</p>
+                        <p class="mb-3">Năm Xuất Bản: {{$object->price}}</p>
                         <p class="mb-4">
                             Nội dung:
                             {{$object->description}}
@@ -66,28 +60,21 @@
                                                 <i class="fa fa-star"></i>
                                             </div>
                                         </div>
-
                                         <a href="#" class="btn btn-primary border border-secondary text-primary rounded-pill px-4 py-3">
                                             Post Comment
                                         </a>
                                     </div>
                                 </div>
-
                             </div>
                         </form>
-
                     </div>
-
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
 
 @empty
 <p class="text-center">Không có dữ liệu</p>
 @endforelse
-
 @endsection

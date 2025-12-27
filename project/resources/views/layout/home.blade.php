@@ -38,24 +38,57 @@
             </div>
             <div class="col-md-6 text-center">
                 <div class="position-relative ps-4">
-                    <div class="d-flex border border-success rounded-pill">
-                        <input class="form-control border-0 rounded-pill w-100 py-3 bg-dark text-white" type="text"
-                            placeholder="Tìm kiếm phim, diễn viên, đạo diễn...">
-                        <button type="button" class="btn btn-success rounded-pill py-3 px-5" style="border: 0;"><i
-                                class="fas fa-search text-dark"></i></button>
-                    </div>
+
+                        <form action="{{ route('search') }}" method="GET" class="d-flex">
+    <input 
+        type="text" 
+        name="keyword" 
+        class="form-control" 
+        placeholder="Nhập tên phim cần tìm..." 
+        value="{{ request('keyword') }}"
+    >
+    <button type="submit" class="btn btn-success ms-2">
+        <i class="fas fa-search"></i>
+    </button>
+</form>
+ 
                 </div>
             </div>
             <div class="col-md-3 text-center text-lg-end">
-                <div class="d-inline-flex align-items-center">
-                    <a href="#" class="text-success d-flex align-items-center justify-content-center me-3"
-                        title="Phim Yêu Thích"><span class="rounded-circle btn-md-square border"><i
-                                class="fas fa-heart"></i></a>
-                    <a href="#" class="text-success d-flex align-items-center justify-content-center"
-                        title="Tài Khoản"><span class="rounded-circle btn-md-square border"><i
-                                class="fa fa-user"></i></span>
-                </div>
+    <div class="d-inline-flex align-items-center">
+        <a href="#" class="text-success d-flex align-items-center justify-content-center me-3" title="Phim Yêu Thích">
+            <span class="rounded-circle btn-md-square border"><i class="fas fa-heart"></i></span>
+        </a>
+
+        @guest
+            {{-- Hiển thị khi chưa đăng nhập --}}
+            <a href="{{ route('login') }}" class="text-success d-flex align-items-center justify-content-center" title="Đăng Nhập">
+                <span class="rounded-circle btn-md-square border"><i class="fa fa-user"></i></span>
+            </a>
+        @else
+            {{-- Hiển thị khi đã đăng nhập --}}
+            <div class="dropdown">
+                <a href="#" class="text-success d-flex align-items-center justify-content-center dropdown-toggle" data-bs-toggle="dropdown">
+                    <span class="rounded-circle btn-md-square border"><i class="fa fa-user"></i></span>
+                    <span class="ms-2 d-none d-lg-inline">{{ Auth::user()->name }}</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{{ route('admin') }}">Quản trị</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <a class="dropdown-item" href="{{ route('logout') }}" 
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Đăng xuất
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
+                </ul>
             </div>
+        @endguest
+    </div>
+</div>
         </div>
     </div>
     
@@ -84,11 +117,6 @@
                                     @empty
                                     <h1>loi</h1>
                                     @endforelse
-                                    <!-- <a href="{{ route('hanhdong') }}"class="dropdown-item">Hành động</a>
-                                    <a href="{{ route('kinhdi') }}" class="dropdown-item">Kinh dị</a>
-                                    <a href="#" class="dropdown-item">Hài hước</a>
-                                    <a href="#" class="dropdown-item">Hoạt hình</a>
-                                    <a href="#" class="dropdown-item">Lãng mạn</a> -->
                                 </ul>
                             </div>
                             <a href="{{ route('tintuc') }}" class="nav-item nav-link text-white">Tin Tức Điện Ảnh</a>
@@ -103,8 +131,6 @@
         </div>
     </div>
         @yield('body')
-    
-
     
     <div class="container-fluid product py-5 bg-dark">
         <div class="container py-5">

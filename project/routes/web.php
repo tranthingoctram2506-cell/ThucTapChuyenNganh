@@ -46,4 +46,4 @@ Route::get('/category_product/{category}', [App\Http\Controllers\HomeController:
     ->name('category_product');
 Route::get('/category_product/single_product/{category}', [App\Http\Controllers\HomeController::class, 'single_product'])
     ->name('single_product'); 
-    
+Route::get('/tim-kiem', [HomeController::class, 'search'])->name('search');

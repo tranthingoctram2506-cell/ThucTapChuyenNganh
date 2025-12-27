@@ -26,7 +26,7 @@
                     @error('content') <span class="text-danger">{{ $message }}</span> @enderror
                 </div>
                 <div class="form-group mb-3">
-                    <label for="price">Giá:</label>
+                    <label for="price">Năm Xuất Bản:</label>
                     <input type="number" class="form-control" id="price" name="price" value="{{ old('price') }}" required>
                     @error('price') <span class="text-danger">{{ $message }}</span> @enderror
                 </div>

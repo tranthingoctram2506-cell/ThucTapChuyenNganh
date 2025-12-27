@@ -31,7 +31,6 @@ class HomeController extends Controller
         $phims = Phim::where('status', 1)->get();
         return view('home.index',compact("categories","phims"));
     }
-    
     public function logout()
     {
         if(Auth::check()){
@@ -52,5 +51,13 @@ class HomeController extends Controller
                 ['id','=',$id],['status','=','1']
             ])->get();
         return view('home.single_product',compact("phim","phim"));
+    }
+
+    public function search(Request $request) {
+    $keyword = $request->keyword;
+    $phim = Phim::where('name', 'LIKE', '%'.$keyword.'%')
+                ->where('status', 1)
+                ->get();
+    return view('home.single_product', compact('phim', 'keyword'));
     }
 }

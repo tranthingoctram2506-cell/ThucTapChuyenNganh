@@ -19,7 +19,7 @@
        <th>Mô Tả</th>
        <th>Nội Dung</th>
        <th>Trạng Thái</th>
-       <th>Giá</th>
+       <th>Năm Xuất Bản</th>
        <th>view</th>
        <th>edit</th>
        <th>delete</th>

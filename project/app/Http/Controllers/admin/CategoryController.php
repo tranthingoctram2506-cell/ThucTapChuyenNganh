@@ -68,4 +68,5 @@ class CategoryController extends Controller
         else
             return back()->with('error', 'Xóa thể loại thất bại.');
     }
+    
 }

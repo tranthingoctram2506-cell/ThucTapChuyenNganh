@@ -16,7 +16,7 @@ class PhimController extends Controller
 
     public function create()
     {
-        $categories = Category::all();
+        $categories = Category::where('status', 1)->get();
         return view('admin.product.addphim', compact('categories')); 
     }
 
@@ -40,7 +40,7 @@ class PhimController extends Controller
 
     public function edit($id){
         $phim = Phim::find($id);
-        $categories = Category::all();
+        $categories = Category::where('status', 1)->get();
         return view('admin.product.editphim', compact('phim', 'categories'));
     }
 
@@ -70,4 +70,5 @@ class PhimController extends Controller
         else
             return back()->with('error', 'Xóa phim thất bại.');
     }
+    
 }
